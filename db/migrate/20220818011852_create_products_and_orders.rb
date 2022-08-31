@@ -5,7 +5,8 @@ class CreateProductsAndOrders < ActiveRecord::Migration[7.0]
       t.text :description
       t.text :img_link
       t.integer :category_id
-
+      t.integer :water_level, null: true
+      t.integer :sun_level, null: true
       t.timestamps
     end
     add_money :products, :price, currency: { present: true }

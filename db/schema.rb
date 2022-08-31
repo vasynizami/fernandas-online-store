@@ -52,6 +52,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_014633) do
     t.text "description"
     t.text "img_link"
     t.integer "category_id"
+    t.integer "water_level"
+    t.integer "sun_level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
