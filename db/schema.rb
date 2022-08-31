@@ -40,11 +40,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_014633) do
     t.integer "price_cents", default: 0, null: false
   end
 
-  create_table "orders_products", force: :cascade do |t|
+  create_table "orders_products", id: false, force: :cascade do |t|
     t.integer "order_id"
     t.integer "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_orders_products_on_order_id"
+    t.index ["product_id"], name: "index_orders_products_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -52,6 +52,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_014633) do
     t.text "description"
     t.text "img_link"
     t.integer "category_id"
+    t.integer "water_level"
+    t.integer "sun_level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
