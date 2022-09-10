@@ -12,11 +12,14 @@ module FernandasOnlineStore
     config.load_defaults 7.0
 
     # Configuration for the application, engines, and railties goes here.
-    #
+    config_file = Rails.application.config_for(:application)
+    config_file.each do |key,value|
+     ENV["key"] = value
+    end unless config_file.nil?
+  end
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-  end
 end
