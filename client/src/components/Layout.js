@@ -40,7 +40,7 @@ export default function Layout({ title, description, children }) {
 
   return (
     <>
-     <div>Layout</div>
+    <div>Layout</div>
     </>
   );
 }
