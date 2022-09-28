@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Front End
+
+###Design 
+
+
+<img src="./client/design-mockups/home.jpg" alt="Alt text" title="Home">
+
