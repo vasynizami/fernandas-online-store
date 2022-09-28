@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
     before_action :authenticate_user!
     before_action :set_order, only: [:index, :show, :update]
-    before_action :set_order, only: [:show, :update]
   
 
     def index
@@ -38,13 +37,9 @@ class OrdersController < ApplicationController
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
-      @order = Order.find(params[:order_id])
-    end
-
-    def set_order
-      @order = Order.find(params[:id])
-      # if we needed show orders by the current user, we'd use smth like (????)
-      # @order = @current_user.order.find(params[:id])
+      @order.user = @current_user
+      @order = @current_user.order.find(params[:id])
+      # @order = Order.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
