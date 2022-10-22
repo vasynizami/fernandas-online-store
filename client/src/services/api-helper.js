@@ -64,22 +64,22 @@ export const getAllOrders = async (userId) => {
   return resp.data;
 }
 
-export const getOneReview = async (anything, id) => {
-  const resp = await api.get(`/movies/${anything}/reviews/${id}`);
+export const getOneOrder = async (anything, id) => {
+  const resp = await api.get(`/users/${anything}/orders/${id}`);
   return resp.data;
 }
 
-export const postReview = async (movie_id, reviewData) => {
-  const resp = await api.post(`/movies/${movie_id}/reviews`, reviewData);
+export const createOrder = async (orderId, orderData) => {
+  const resp = await api.post(`/users/${orderId}/orders`, orderData);
   return resp.data;
 }
 
-export const editReview = async (anything, id, reviewData) => {
-  const resp = await api.put(`/movies/${anything}/reviews/${id}`, reviewData);
-  return resp.data;
-}
+// export const editReview = async (anything, id, reviewData) => {
+//   const resp = await api.put(`/movies/${anything}/reviews/${id}`, reviewData);
+//   return resp.data;
+// }
 
-export const destroyReview = async (anything, id) => {
-  const resp = await api.delete(`/movies/${anything}/reviews/${id}`);
-  return resp;
-}
+// export const destroyReview = async (anything, id) => {
+//   const resp = await api.delete(`/movies/${anything}/reviews/${id}`);
+//   return resp;
+// }
