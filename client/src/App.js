@@ -1,5 +1,4 @@
 import './App.css';
-import axios from "axios";
 import Shop from './components/Shop';
 import {useEffect, useState} from "react";
 import { getAllProducts } from './services/api-helper';

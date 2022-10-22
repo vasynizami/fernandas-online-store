@@ -59,27 +59,17 @@ export const getOneProduct = async (id) => {
 //================= orders ==================== 
 //============================================
 
-export const getAllOrders = async (userId) => {
-  const resp = await api.get(`/users/${user_id}/orders`);
+export const getAllOrders = async (userID) => {
+  const resp = await api.get(`/users/${userID}/orders`);
   return resp.data;
 }
 
-export const getOneOrder = async (anything, id) => {
-  const resp = await api.get(`/users/${anything}/orders/${id}`);
+export const getOneOrder = async (userID, orderID) => {
+  const resp = await api.get(`/users/${userID}/orders/${orderID}`);
   return resp.data;
 }
 
-export const createOrder = async (orderId, orderData) => {
-  const resp = await api.post(`/users/${orderId}/orders`, orderData);
+export const createOrder = async (orderID, orderData) => {
+  const resp = await api.post(`/users/${orderID}/orders`, orderData);
   return resp.data;
 }
-
-// export const editReview = async (anything, id, reviewData) => {
-//   const resp = await api.put(`/movies/${anything}/reviews/${id}`, reviewData);
-//   return resp.data;
-// }
-
-// export const destroyReview = async (anything, id) => {
-//   const resp = await api.delete(`/movies/${anything}/reviews/${id}`);
-//   return resp;
-// }
